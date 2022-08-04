@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MOdel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="MOdelStoreContainer">
+    <EntitySet Name="UVs" EntityType="MOdel.Store.UVs" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Locations" EntityType="MOdel.Store.Locations" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Information" EntityType="MOdel.Store.Information" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Hazards" EntityType="MOdel.Store.Hazards" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="UVs">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UV_Value" Type="bigint" Nullable="false" />
+    <Property Name="Forecast_value" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Locations">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Locationname" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Information">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Details" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Hazards">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="HazardName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Details" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+</Schema>

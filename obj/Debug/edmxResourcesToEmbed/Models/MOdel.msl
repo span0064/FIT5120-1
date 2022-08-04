@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MOdelStoreContainer" CdmEntityContainer="MOdelContainer">
+    <EntitySetMapping Name="UVs">
+      <EntityTypeMapping TypeName="IsTypeOf(MOdel.UV)">
+        <MappingFragment StoreEntitySet="UVs">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UV_Value" ColumnName="UV_Value" />
+          <ScalarProperty Name="Forecast_value" ColumnName="Forecast_value" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Locations">
+      <EntityTypeMapping TypeName="IsTypeOf(MOdel.Location)">
+        <MappingFragment StoreEntitySet="Locations">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Locationname" ColumnName="Locationname" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Information">
+      <EntityTypeMapping TypeName="IsTypeOf(MOdel.Information)">
+        <MappingFragment StoreEntitySet="Information">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Details" ColumnName="Details" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Hazards">
+      <EntityTypeMapping TypeName="IsTypeOf(MOdel.Hazard)">
+        <MappingFragment StoreEntitySet="Hazards">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="HazardName" ColumnName="HazardName" />
+          <ScalarProperty Name="Details" ColumnName="Details" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

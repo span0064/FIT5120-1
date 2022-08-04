@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="MOdel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="MOdelStoreContainer">
+    <EntitySet Name="UVs" EntityType="MOdel.Store.UVs" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Locations" EntityType="MOdel.Store.Locations" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Information" EntityType="MOdel.Store.Information" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Hazards" EntityType="MOdel.Store.Hazards" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="UVs">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UV_Value" Type="bigint" Nullable="false" />
+    <Property Name="Forecast_value" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Locations">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Locationname" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Information">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Details" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Hazards">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="HazardName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Details" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="MOdel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="MOdelContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="UVs" EntityType="MOdel.UV" />
+          <EntitySet Name="Locations" EntityType="MOdel.Location" />
+          <EntitySet Name="Information" EntityType="MOdel.Information" />
+          <EntitySet Name="Hazards" EntityType="MOdel.Hazard" />
+        </EntityContainer>
+        <EntityType Name="UV">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UV_Value" Type="Int64" Nullable="false" />
+          <Property Name="Forecast_value" Type="Int64" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Location">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Locationname" Type="String" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Information">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Details" Type="String" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Hazard">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="HazardName" Type="String" Nullable="false" />
+          <Property Name="Details" Type="String" Nullable="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MOdelStoreContainer" CdmEntityContainer="MOdelContainer">
+    <EntitySetMapping Name="UVs">
+      <EntityTypeMapping TypeName="IsTypeOf(MOdel.UV)">
+        <MappingFragment StoreEntitySet="UVs">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UV_Value" ColumnName="UV_Value" />
+          <ScalarProperty Name="Forecast_value" ColumnName="Forecast_value" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Locations">
+      <EntityTypeMapping TypeName="IsTypeOf(MOdel.Location)">
+        <MappingFragment StoreEntitySet="Locations">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Locationname" ColumnName="Locationname" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Information">
+      <EntityTypeMapping TypeName="IsTypeOf(MOdel.Information)">
+        <MappingFragment StoreEntitySet="Information">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Details" ColumnName="Details" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Hazards">
+      <EntityTypeMapping TypeName="IsTypeOf(MOdel.Hazard)">
+        <MappingFragment StoreEntitySet="Hazards">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="HazardName" ColumnName="HazardName" />
+          <ScalarProperty Name="Details" ColumnName="Details" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

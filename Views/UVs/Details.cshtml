@@ -1,0 +1,35 @@
+﻿@model fit5120.Models.UV
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Home/Index.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>UV</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.UV_Value)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UV_Value)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Forecast_value)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Forecast_value)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

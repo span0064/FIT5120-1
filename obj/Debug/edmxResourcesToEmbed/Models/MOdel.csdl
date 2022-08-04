@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="MOdel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+  <EntityContainer Name="MOdelContainer" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="UVs" EntityType="MOdel.UV" />
+    <EntitySet Name="Locations" EntityType="MOdel.Location" />
+    <EntitySet Name="Information" EntityType="MOdel.Information" />
+    <EntitySet Name="Hazards" EntityType="MOdel.Hazard" />
+  </EntityContainer>
+  <EntityType Name="UV">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UV_Value" Type="Int64" Nullable="false" />
+    <Property Name="Forecast_value" Type="Int64" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Location">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Locationname" Type="String" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Information">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Details" Type="String" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Hazard">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="HazardName" Type="String" Nullable="false" />
+    <Property Name="Details" Type="String" Nullable="false" />
+  </EntityType>
+</Schema>
